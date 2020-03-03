@@ -10,13 +10,49 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-
+let quotes = [
+  {
+    quote:'The city’s central computer told you?  R2D2, you know better than to trust a strange computer!' , 
+    source:'C33PO',
+    citation:'Star Wars: Episode V',
+    year:'1980'
+  },
+  {
+    quote:'Microsoft has a new version out, Windows XP, which according to everybody is the ‘most reliable Windows ever.‘  To me, this is like saying that asparagus is ‘the most articulate vegetable ever.‘' , 
+    source:'Dave Barry',
+    citation:'',
+    year:''
+  },
+  {
+    quote:'That’s what’s cool about working with computers.  They don’t argue, they remember everything, and they don’t drink all your beer.' , 
+    source:'Paul Leary',
+    citation:'',
+    year:''
+  },
+  {
+    quote:'Tell me and I forget.  Teach me and I remember.  Involve me and I learn.' , 
+    source:'Benjamin Franklin',
+    citation:'',
+    year:''
+  },
+  {
+    quote:'Commenting your code is like cleaning your bathroom — you never want to do it, but it really does create a more pleasant experience for you and your guests.' , 
+    source:'Ryan Campbell',
+    citation:'',
+    year:''
+  },
+];
 
 
 /***
  * `getRandomQuote` function
 ***/
-
+function getRandomQuote(quotes){
+  for (x in quotes){
+    x = 
+    console.log
+  }
+}
 
 
 /***
