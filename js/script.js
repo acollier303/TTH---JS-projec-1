@@ -48,17 +48,17 @@ let quotes = [
  * `getRandomQuote` function
 ***/
 function getRandomQuote(quotes){
-  for (x in quotes){
-    x = 
-    console.log
-  }
+  let random = Math.floor(Math.random()*5);
+  console.log(random);
 }
 
 
 /***
  * `printQuote` function
 ***/
-
+function printQuote(){
+    
+};
 
 
 /***
@@ -67,3 +67,5 @@ function getRandomQuote(quotes){
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+getRandomQuote();
