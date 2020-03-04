@@ -19,28 +19,20 @@ let quotes = [
   },
   {
     quote:'Microsoft has a new version out, Windows XP, which according to everybody is the ‘most reliable Windows ever.‘  To me, this is like saying that asparagus is ‘the most articulate vegetable ever.‘' , 
-    source:'Dave Barry',
-    citation:'',
-    year:''
+    source:'Dave Barry'
   },
   {
     quote:'That’s what’s cool about working with computers.  They don’t argue, they remember everything, and they don’t drink all your beer.' , 
-    source:'Paul Leary',
-    citation:'',
-    year:''
+    source:'Paul Leary'
   },
   {
     quote:'Tell me and I forget.  Teach me and I remember.  Involve me and I learn.' , 
-    source:'Benjamin Franklin',
-    citation:'',
-    year:''
+    source:'Benjamin Franklin'
   },
   {
     quote:'Commenting your code is like cleaning your bathroom — you never want to do it, but it really does create a more pleasant experience for you and your guests.' , 
-    source:'Ryan Campbell',
-    citation:'',
-    year:''
-  },
+    source:'Ryan Campbell'
+      },
 ];
 
 
@@ -52,19 +44,27 @@ function getRandomQuote(saying){
   // console.log(random);
   let quoteMessage = saying[random].quote; // Assigns a random quote from 'quotes' to s variable
   let sourceMessage = saying[random].source; //Assigns a ramdom source from 'quotes' to a variable
-  message = `"${quoteMessage}", ${sourceMessage}`;
-  return message;
+  let citationMessage = saying[random].citation;
+  let yearMessage = saying[random].year;
+  //message = `"${quoteMessage}", ${sourceMessage}`;
+  result = [quoteMessage, sourceMessage, citationMessage, yearMessage]; //Creates a variable that stores random quote.
+  return result;
 }
 
+// getRandomQuote(quotes);
+// console.log(result);
 
 
 /***
  * `printQuote` function
 ***/
-function printQuote(display){
-  //getRandomQuote(quotes);
-  console.log(getRandomQuote(quotes));
-};
+function printQuote(final){
+  getRandomQuote(quotes);
+  final = result;
+  finalMessage = `<p class="quote"> ${final[0]} </p>
+  <p class="source"> ${final[1]} </p>`;
+  console.log(finalMessage);
+ };
 
 
 /***
