@@ -3,13 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-let chosenQuote;
-/*** 
- * `quotes` array 
-***/
+//--- Array of quotes, citations, and years
 let quotes = [
   {
     quote:'The city’s central computer told you?  R2D2, you know better than to trust a strange computer!' , 
@@ -35,42 +29,37 @@ let quotes = [
       },
 ];
 
-
-/***
- * `getRandomQuote` function
-***/
+//--- This function returns a random quote from the 'quotes' array
 function getRandomQuote(saying){
-  let random = Math.floor(Math.random()*5); //Generates a random number betwen 0 and 5
-  // console.log(random);
+  let random = Math.floor(Math.random()*quotes.length);   //Generates a random number betwen 0 and the last element of the array
   let quoteMessage = saying[random].quote; // Assigns a random quote from 'quotes' to s variable
-  let sourceMessage = saying[random].source; //Assigns a ramdom source from 'quotes' to a variable
-  let citationMessage = saying[random].citation;
-  let yearMessage = saying[random].year;
-  //message = `"${quoteMessage}", ${sourceMessage}`;
-  result = [quoteMessage, sourceMessage, citationMessage, yearMessage]; //Creates a variable that stores random quote.
+  let sourceMessage = saying[random].source; //Assigns a matching 'source' from 'quotes' to a variable
+  let citationMessage = saying[random].citation; //Assigns a matching citation from 'quotes' to a variable
+  let yearMessage = saying[random].year; //Assigns a matching 'year' from 'quotes' to a variable
+  result = [quoteMessage, sourceMessage, citationMessage, yearMessage]; //Creates an array that stores the random quote.
   return result;
 }
 
-// getRandomQuote(quotes);
-// console.log(result);
-
-
-/***
- * `printQuote` function
-***/
+//--- This function displays and formats random quote on index.html
 function printQuote(final){
-  getRandomQuote(quotes);
+  getRandomQuote(quotes);   
   final = result;
-  finalMessage = `<p class="quote"> ${final[0]} </p>
-  <p class="source"> ${final[1]} </p>`;
-  console.log(finalMessage);
- };
+  
+  //--- creates a variable that combines 'quote' and 'source' in to HTML string.
+  finalMessage = `<p class="quote"> ${final[0]} </p> 
+  <p class="source"> ${final[1]}`;
+  
+  //--- Adds 'citation' to HTML string if availible 
+  if (final[3] != undefined){
+    finalMessage += `<span class="citation"> ${final[3]} </span>`;
+  };
 
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+  //--- Adds 'year' to HTML string if availible
+  if (final[4] != undefined){
+    finalMessage += '<span class="year"> ${final[4]} </span></p?'
+  }
+  document.getElementById('quote-box').innerHTML = finalMessage; 
+}
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
