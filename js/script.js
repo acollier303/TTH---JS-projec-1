@@ -49,17 +49,21 @@ let quotes = [
 ***/
 function getRandomQuote(saying){
   let random = Math.floor(Math.random()*5); //Generates a random number betwen 0 and 5
-  console.log(random);
-  let message = saying[random].quote; // Assigns a random quote from 'quotes' to message
-  console.log(message);
+  // console.log(random);
+  let quoteMessage = saying[random].quote; // Assigns a random quote from 'quotes' to s variable
+  let sourceMessage = saying[random].source; //Assigns a ramdom source from 'quotes' to a variable
+  message = `"${quoteMessage}", ${sourceMessage}`;
+  return message;
 }
+
 
 
 /***
  * `printQuote` function
 ***/
-function printQuote(){
-    
+function printQuote(display){
+  //getRandomQuote(quotes);
+  console.log(getRandomQuote(quotes));
 };
 
 
@@ -70,4 +74,3 @@ function printQuote(){
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-getRandomQuote(quotes);
