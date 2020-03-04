@@ -1,6 +1,7 @@
 /******************************************
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
+Adrian Collier
 ******************************************/
 
 //--- Array of quotes, citations, and years
@@ -45,11 +46,11 @@ function printQuote(final){
   getRandomQuote(quotes);   
   final = result;
   
-  //--- creates a variable that combines 'quote' and 'source' in to HTML string.
+//--- creates a variable that combines 'quote' and 'source' in to HTML string.
   finalMessage = `<p class="quote"> ${final[0]} </p> 
   <p class="source"> ${final[1]}`;
   
-  //--- Adds 'citation' to HTML string if availible 
+//--- Adds 'citation' to HTML string if availible 
   if (final[3] != undefined){
     finalMessage += `<span class="citation"> ${final[3]} </span>`;
   };
