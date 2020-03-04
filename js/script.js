@@ -6,7 +6,7 @@ project 1 - A Random Quote Generator
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
+let chosenQuote;
 /*** 
  * `quotes` array 
 ***/
@@ -47,9 +47,11 @@ let quotes = [
 /***
  * `getRandomQuote` function
 ***/
-function getRandomQuote(quotes){
-  let random = Math.floor(Math.random()*5);
+function getRandomQuote(saying){
+  let random = Math.floor(Math.random()*5); //Generates a random number betwen 0 and 5
   console.log(random);
+  let message = saying[random].quote; // Assigns a random quote from 'quotes' to message
+  console.log(message);
 }
 
 
@@ -68,4 +70,4 @@ function printQuote(){
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-getRandomQuote();
+getRandomQuote(quotes);
