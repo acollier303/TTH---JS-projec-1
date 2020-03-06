@@ -33,33 +33,26 @@ let quotes = [
 //--- This function returns a random quote from the 'quotes' array
 function getRandomQuote(saying){
   let random = Math.floor(Math.random()*quotes.length);   //Generates a random number betwen 0 and the last element of the array
-  let quoteMessage = saying[random].quote; // Assigns a random quote from 'quotes' to s variable
-  let sourceMessage = saying[random].source; //Assigns a matching 'source' from 'quotes' to a variable
-  let citationMessage = saying[random].citation; //Assigns a matching citation from 'quotes' to a variable
-  let yearMessage = saying[random].year; //Assigns a matching 'year' from 'quotes' to a variable
-  result = [quoteMessage, sourceMessage, citationMessage, yearMessage]; //Creates an array that stores the random quote.
-  return result;
+  return random;
 }
 
 //--- This function displays and formats random quote on index.html
-function printQuote(final){
-  getRandomQuote(quotes);   
-  final = result;
-  
+function printQuote(){
+  randomQuote = quotes[getRandomQuote()];
 //--- creates a variable that combines 'quote' and 'source' in to HTML string.
-  finalMessage = `<p class="quote"> ${final[0]} </p> 
-  <p class="source"> ${final[1]}`;
+  let displayQuote = `<p class="quote"> ${randomQuote.quote} </p> 
+  <p class="source"> ${randomQuote.source}`;
   
 //--- Adds 'citation' to HTML string if availible 
-  if (final[3] != undefined){
-    finalMessage += `<span class="citation"> ${final[3]} </span>`;
+  if (randomQuote.citation != undefined){
+    displayQuote += `<span class="citation"> ${randomQuote.citation} </span></p>`;
   };
 
   //--- Adds 'year' to HTML string if availible
-  if (final[4] != undefined){
-    finalMessage += '<span class="year"> ${final[4]} </span></p?'
+  if (randomQuote.year != undefined){
+    displayQuote += `<span class="year"> ${randomQuote.year} </span></p>`
   }
-  document.getElementById('quote-box').innerHTML = finalMessage; 
+  document.getElementById('quote-box').innerHTML = displayQuote; 
 }
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
