@@ -38,12 +38,12 @@ function getRandomQuote(saying){
 
 //--- This function displays and formats random quote on index.html
 function printQuote(){
-  randomQuote = quotes[getRandomQuote()];
-//--- creates a variable that combines 'quote' and 'source' in to HTML string.
+  let randomQuote = quotes[getRandomQuote()];
+  //--- creates a variable that combines 'quote' and 'source' in to HTML string.
   let displayQuote = `<p class="quote"> ${randomQuote.quote} </p> 
   <p class="source"> ${randomQuote.source}`;
   
-//--- Adds 'citation' to HTML string if availible 
+  //--- Adds 'citation' to HTML string if availible 
   if (randomQuote.citation != undefined){
     displayQuote += `<span class="citation"> ${randomQuote.citation} </span></p>`;
   };
