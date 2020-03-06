@@ -33,26 +33,26 @@ let quotes = [
 //--- This function returns a random quote from the 'quotes' array
 function getRandomQuote(saying){
   let random = Math.floor(Math.random()*quotes.length);   //Generates a random number betwen 0 and the last element of the array
-  return random;
+  return quotes[random];
 }
 
 //--- This function displays and formats random quote on index.html
 function printQuote(){
-  let randomQuote = quotes[getRandomQuote()];
+  let randomQuote = getRandomQuote();
   //--- creates a variable that combines 'quote' and 'source' in to HTML string.
   let displayQuote = `<p class="quote"> ${randomQuote.quote} </p> 
   <p class="source"> ${randomQuote.source}`;
   
   //--- Adds 'citation' to HTML string if availible 
   if (randomQuote.citation != undefined){
-    displayQuote += `<span class="citation"> ${randomQuote.citation} </span></p>`;
+    displayQuote += `<span class="citation"> ${randomQuote.citation} </span>`;
   };
 
   //--- Adds 'year' to HTML string if availible
   if (randomQuote.year != undefined){
-    displayQuote += `<span class="year"> ${randomQuote.year} </span></p>`
+    displayQuote += `<span class="year"> ${randomQuote.year} </span>`;
   }
-  document.getElementById('quote-box').innerHTML = displayQuote; 
+  document.getElementById('quote-box').innerHTML = displayQuote += '</p>'; 
 }
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
